@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="vendor/reset.css">
+    <link rel="stylesheet" href="styles/main.min.css">
+  </head>
+  <body>
+    <div class="contents">
+      <section id="section_1">
+        <div class="inner-wrapper">
+          <div class="intro-text">
+            <p class="intro-title">Tea</p>
+            <p class="intro-caption">An Interactive Infographic</p>
+            <div class="intro-leaf"></div>
+          </div>
+          <div class="intro-teapot"></div>
+        </div>
+      </section>
+      <section id="section_2">
+        <div class="inner-wrapper">
+          <div class="title-wrapper">
+            <h3 class="section-title">Types of Tea</h3>
+          </div>
+          <div class="content-wrapper">
+            <p class="intro-text">
+              There are over 500 known different species of tea in the world. All of which derive from the original Camelia Sinesis plant. Camelia Sinesis is a small shrub that can be found growing in tropical and subtropical regions of the world. Although there are many varieties of tea, most tea beverages can be categorized into black, green, yellow, white, pu'er and oolong teas depending on how the leaves are processed.
+              
+            </p>
+            <div class="table-container">
+              <div class="table-row">
+                <article class="tea-item">
+                  <div class="green"></div>
+                  <h2 class="tea-type">Green Tea</h2>
+                  <p class="type-desc">Green tea is a tea produced from unwilted and unoxidized leaves, without having been processed in the same manner than its cousins. This tea is rich is many flavonoids which has been observed to impede oxidative damage to cells.</p>
+                </article>
+                <article class="tea-item">
+                  <div class="black"></div>
+                  <h2 class="tea-type">Black Tea</h2>
+                  <p class="type-desc">Black tea is produced from wilted and oxidized leaves, giving the tea its dark color. This tea is the tea that most are familiar with, as having black tea was better for transport during historical times.</p>
+                </article>
+              </div>
+              <div class="table-row">
+                <article class="tea-item">
+                  <div class="white"></div>
+                  <h2 class="tea-type">White Tea</h2>
+                  <p class="type-desc">White tea is produced from wilted and unoxidized leaves. White tea is generally only made from select buds and leaves during cultivation and is one of the rarest forms of tea.</p>
+                </article>
+                <article class="tea-item">
+                  <div class="yellow"></div>
+                  <h2 class="tea-type">Yellow Tea</h2>
+                  <p class="type-desc">Yellow tea is produced in a very similar manner to green tea. While processing methods vary, yellow tea is generally produced by being steamed under a cloth. This causes the tea to oxidize slightly giving it its yellow tinge and a "mellower" taste.</p>
+                </article>
+              </div>
+              <div class="table-row">
+                <article class="tea-item">
+                  <div class="puer"></div>
+                  <h2 class="tea-type">Pu&#39;er</h2>
+                  <p class="type-desc">Pu&#39;er tea is a tea that is produced in the southwestern Chinese province of Yunnan. Only tea coming from Yunnan can be considered to be Pu&#39;er tea, and pu&#39;er teas are known to be of high quality. There are two different types of Pu&#39;er teas, green pu&#39;er tea and black pu&#39;er tea. Green pu&#39;er tea and black pu&#39;er tea are produced in a near identical manner but black pu&#39; tea is piled in a humid and warm environment to allow the leaves to oxidize.</p>
+                </article>
+                <article class="tea-item">
+                  <div class="oolong"></div>
+                  <h2 class="tea-type">Oolong</h2>
+                  <p class="type-desc">Oolong tea is tea that is produced through being wilted, bruised and partially oxidized. First the tea is left to wilt to remove moisture from the leaves. The leaves are then rolled in any variety of ways including twisting and curling the leaves into balls and then are left in a heap to oxidize.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="section_3">
+        <div class="inner-wrapper">
+          <div class="title-wrapper">
+            <h3 class="section-title">Where is Tea Produced?</h3>
+          </div>
+          <p class="section-text">Although the practice of growing <i>Camelia Sinesis</i> for tea cultivation originated in southwestern China, the cultivation of tea has spread globally. <i>Camelia Sinesis</i> grows primarily in tropical and subtropical climates but has been noted to reach into cooler climates; the plant is cultivated as far north as Washington state in the United States, Cornwall in southern England and the island of Tasmania.</p>
+          <div class="section-item">
+            <h2 class="section-subtitle">Top 10 Tea Producing Regions</h2>
+            <p class="section-text">While tea is grown globally, a large proportion of global tea production comes from a few nations. This fact is only natural since <i>Camelia Sinesis</i> primarily grows in warm, humid environments and naturally this is reflected in where the most tea is grown globally.</p>
+            <p style="margin: 1em auto; text-align: center">&#40;Hovering over a country will bring up a tooltip.&#41;</p>
+          </div>
+          <div id="earth"></div>
+          <p class="earth-caption">&#40;Tea production during the year 2013. All numbers are per thousand metric tonnes per year.&#41;</p><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script type="text/javascript" src="https://d3js.org/d3-queue.v1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/0.2.16/d3.geo.projection.min.js"></script>
+          <style>
+            .country {
+            
+            	fill: #a62626;
+            	transition: fill 0.5s linear;
+            }
+            
+            .country:hover {
+            
+            	fill: #d55353;
+            }
+            
+            .country.AFG {
+            
+            	fill: none !important;
+            }
+            
+            .earth {
+            
+            	fill: #5e420d;
+            }
+            
+            .tooltip {
+            
+            	position: absolute;
+            	z-index: 2;
+            
+            	background-color: white;
+            	border-radius: 8px;
+            
+            	text-align: center;
+            
+            	font-size: 12px;
+            
+            	padding: 0.2em 0.4em;
+            }
+            
+          </style>
+          <script type="text/javascript">
+            var earth = d3.select("#earth").append("svg")
+            	.attr("height", "100%")
+            	.attr("width", "100%");
+            
+            /* tooltip creation */
+            
+            var tooltip = d3.select("#earth").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", "none");
+            
+            var earthProjection = d3.geo.wagner6()
+            	.scale(140)
+            	.precision(0.1)
+            	.rotate([-15, 0]);
+            
+            var path = d3.geo.path()
+            	.projection(earthProjection);
+            
+            d3.json("assets/geojson/earth.json", function(e, world){
+            	
+            	if(e) throw error;
+            
+            	earth.append("path")
+            		.datum(topojson.feature(world, world.objects.land))
+            		.attr("class", "earth")
+            		.attr("d", path);
+            
+            	// List of top ten tea producing nations
+            
+            	var countriesTop = ["CH1", "IND", "KEN", "LKA", "VNM", "TUR", "IRN", "IDN", "ARG", "JPN"];
+            
+            	earth.selectAll("path.countries")
+            		.data(topojson.feature(world, world.objects.countries).features, function(d) {
+            
+            				if (countriesTop.indexOf(d.id) !== -1) {
+            
+            					return d.id;
+            				}
+            		})
+            		.enter().append("path")
+            		.attr("class", function(d) { return "country " + d.id})
+            		.attr("d", path)
+            		.on("mouseover", function(d){
+            			tooltip.transition()
+            				.duration(500)
+            				.style("opacity", 0.9)
+            			tooltip.html(function(){
+            
+            				if(countriesTop.indexOf(d.id) !== -1) {
+            
+            					switch(d.id) {
+            
+            						case "CH1": 
+            
+            							return "<p style='text-align:center; font-weight: bold;'>China</p><p>Production: 1924kt/yr</p>";
+            
+            						case "IND":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>India</p><p>Production: 1208kt/yr</p>";
+            
+            						case "KEN":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Kenya</p><p>Production: 432kt/yr</p>";
+            
+            						case "LKA":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Sri Lanka</p><p>Production: 340kt/yr</p>";
+            
+            						case "VNM":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Vietnam</p><p>Production: 214kt/yr</p>";
+            
+            						case "TUR":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Turkey</p><p>Production: 212kt/yr</p>";
+            
+            						case "IRN":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Iran</p><p>Production: 160kt/yr</p>";
+            
+            						case "IDN":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Indonesia</p><p>Production: 148kt/yr</p>";
+            
+            						case "ARG":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Argentina</p><p>Production: 105kt/yr</p>";
+            
+            						case "JPN":
+            
+            							return "<p style='text-align:center; font-weight: bold;'>Japan</p><p>Production: 84.8kt/yr</p>"
+            
+            					}
+            				}
+            			})
+            				.style("left", (d3.event.pageX) + 20 + "px")
+            				.style("top", (d3.event.pageY) - 30 + "px")
+            		})
+            		.on("mouseout", function(d) {
+            
+            			tooltip.transition()
+            					.duration(500)
+            					.style("opacity", 0);
+            		});
+            });
+            
+            
+            
+          </script>
+          <div class="section-item">
+            <h2 class="section-subtitle">Even More About Tea</h2>
+          </div>
+          <div class="subsection-item clearfix">
+            <p class="section-text float-left" style="width: 50%">
+              Japan may be the 10<sup>th<sup> largest producer of tea globally, but less than 2% of the total amount of tea produced in Japan is actaully exported. Tea is Japan's most popular beverage, and most of the country's tea supply is consumed locally.
+              
+              
+            </p>
+            <div class="float-right" id="japan">
+              <script type="text/javascript">
+                /* Render SVG of Japan */
+                
+                var jpnHeight = 400,
+                	jpnWidth = 400;
+                
+                var japan = d3.select("#japan").append("svg")
+                	.attr("height", jpnHeight)
+                	.attr("width", jpnWidth)
+                
+                var japanProjection = d3.geo.albers()
+                	.center([0, 35.7])
+                	.parallels([30, 46])
+                	.rotate([-138, 0])
+                	.translate([jpnWidth/2, jpnHeight/2])
+                	.scale(1000);
+                
+                var japanPath = d3.geo.path()
+                .projection(japanProjection);
+                
+                d3.json("assets/geojson/japan.json", function(e, jpn){
+                
+                	if (e) throw error;
+                
+                	japan.append("path")
+                		.datum(topojson.feature(jpn, jpn.objects.japan))
+                		.attr("class", "japan-svg")
+                		.attr("d", japanPath);
+                })
+                
+              </script>
+            </div>
+          </div>
+          <div id="bubble-layout">
+            <script type="text/javascript">
+              var bubbleDiameter = 800,
+              bubbleFormat = d3.format(",g"),
+              bubbleColor = d3.scale.category20b();
+              
+              var bubble = d3.layout.pack()
+              	.sort(null)
+              	.size([bubbleDiameter, bubbleDiameter])
+              	.padding(48);
+              
+              var circleLayout = d3.select("#bubble-layout").append("svg")
+              	.attr("width", bubbleDiameter)
+              	.attr("height", bubbleDiameter)
+              	.attr("class", "bubble");
+              
+              d3.json("assets/geojson/bubbles.json", function(e, bubbles) {
+              
+              	if (e) throw error;
+              
+              	var node = circleLayout.selectAll(".node")
+              	.data(bubble.nodes(classes(bubbles))
+              		.filter(function(d){return !d.children;}))
+              	.enter().append("g")
+              	.attr("class", "node")
+              	.attr("transform", function(d) {
+              
+              		return "translate(" + d.x + "," + d.y + ")";
+              	});
+              
+              	node.append("title")
+              		.text(function(d){
+              
+              			return d.className + ": " + bubbleFormat(d.value);
+              		});
+              
+              	node.append("circle")
+              		.attr("r", function(d) {
+              
+              			return d.r;
+              		})
+              		.style("fill", function(d) {
+              
+              			return bubbleColor(d.itemName);
+              		});
+              
+              	node.append("text")
+              		.attr("dy", "0.3em")
+              		.style("text-anchor", "middle")
+              		.text(function(d) {
+              
+              			return d.className.substring(0, d.r/2);
+              		});
+              
+              
+              });
+              
+              function classes(root) {
+              
+              	var classes = [];
+              
+              	function recurse(name, node) {
+              
+              		if(node.children) node.children.forEach(function(child) {
+              
+              			recurse(node.name, child);
+              		});
+              
+              		else classes.push({
+              
+              			itemName: name,
+              			className: node.name,
+              			value: node.size
+              		});
+              	}
+              
+              	recurse(null, root);
+              	return {
+              		children: classes
+              	};
+              }
+              
+            </script>
+          </div>
+        </div>
+      </section>
+      <section id="section_4">
+        <div class="inner-wrapper">
+          <div class="title-wrapper">
+            <h3 class="section-title">Who consumes tea?</h3>
+          </div>
+          <div class="section-item">
+            <h2 class="section-subtitle">Location of tea per capita consumption</h2>
+            <p class="section-subtitie-note">&#40;Data as of 2014.&#41;</p>
+            <div id="consumption-map">
+              <style>
+                .consumer {
+                
+                	fill: green;
+                }
+                
+                .consumer-border {
+                
+                	stroke: 1px solid grey;
+                	fill: none;
+                }
+                
+                .circle-symbol {
+                
+                	fill: steelblue;
+                	fill-opacity: 0.9;
+                }
+                
+              </style>
+              <script type="text/javascript">
+                var consumptionRadius = d3.scale.linear();
+                
+                var consumptionProjection = d3.geo.wagner6()
+                	.scale(140)
+                	.precision(0.1)
+                	.rotate([-15, 0]);
+                
+                var path = d3.geo.path()
+                	.projection(consumptionProjection);
+                
+                var consumptionMap = d3.select("#consumption-map").append("svg")
+                	.attr("width", "100%")
+                	.attr("height", "100%");
+                
+                var consumptionTooltip = d3.select("#consumption-map").append("div")
+                	.attr("class", "tooltip")
+                	.attr("opacity", "none");
+                
+                queue()
+                	.defer(d3.json, "assets/geojson/earth.json")
+                	.defer(d3.json, "assets/geojson/earth_centroids.json")
+                	.await(consumption); 
+                
+                
+                function consumption (error, earth, centroid) {
+                
+                	if (error) throw error;
+                
+                	consumptionMap.selectAll("path.consumer")
+                		.data(topojson.feature(earth, earth.objects.countries).features)
+                		.enter().append("path")
+                		.attr("class", "consumer")
+                		.attr("d", path);
+                
+                	consumptionMap.append("path")
+                		.datum(topojson.mesh(earth, earth.objects.countries))
+                		.attr("d", path)
+                		.attr("class", "consumer-border");
+                
+                	consumptionMap.selectAll(".circle-symbol")
+                		.data(centroid.features)
+                		.enter().append("path")
+                		.attr("class", "circle-symbol")
+                		.attr("d", path.pointRadius(function(d) {
+                
+                			return consumptionRadius(d.properties.consumption * 2.2);
+                		}))
+                		.on("mouseover", function(d) {
+                
+                			consumptionTooltip.transition()
+                				.duration(500)
+                				.style("opacity", 0.9)
+                			consumptionTooltip.html(function(){
+                
+                				return "<p style='text-align:center; font-weight: bold;'>" + d.properties.name + "</p><p>" + d.properties.consumption + " kg/per person </p>";
+                			})
+                			.style("left", (d3.event.pageX) + 20 + "px")
+                			.style("top", (d3.event.pageY) - 30 + "px")
+                		})
+                		.on("mouseout", function(d) {
+                
+                			consumptionTooltip.transition()
+                				.duration(500)
+                				.style("opacity", 0);
+                		});
+                }
+                
+              </script>
+            </div>
+          </div>
+          <div class="section-item clearfix text-indent">
+            <div class="float-left item-text">
+              <p>Tea is the world's second most popular drink, after water. With over 6 billion cups of tea being drank every day, tea is the beverage of choice in most countries around the world. Tea has been long established as a popular drink throughout history due to its taste, relaxing properties and its health benefits.</p>
+            </div>
+            <div class="float-right item-img"><img src="assets/images/tea.png" alt="Teacup"></div>
+          </div>
+          <div class="section-item clearfix text-indent">
+            <div class="float-left item-img united-kingdom-flag"><img src="assets/images/united_kingdom_flag.png" alt="United Kingdom Flag"></div>
+            <div class="float-right item-text">
+              <p>
+                In the United Kingdom tea is so popular that around 84% of the population has a cup every day! The British love affair with tea became increasingly popular from the 17th century onwards, when Charles II married the Portuguese Catherine of Braganza. Tea was introduced to the upper classes, and quickly caught on amongst the wealthy.
+                
+              </p>
+            </div>
+          </div>
+          <div class="section-item clearfix text-indent">
+            <div class="float-right item-img"><img src="assets/images/turkish_teapot.png" alt="Turkish teapot"></div>
+            <div class="float-left item-text"> 
+              <p>
+                Despite Turkey's long-winded infatuation with coffee, it may come as a surprise to learn that Turkey is the largest per capita consumer of tea in the world. Compared to most nations on Earth, tea only fairly recently became popular in Turkey in the 20th century. In part to the suggestion of Mustafa Atat&#252;rk, the first president of the modern day Republic of Turkey, tea initially gained popular as a more sustainable resource than coffee.
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="section_5">
+        <div class="inner-wrapper">
+          <div class="title-wrapper">
+            <h3 class="section-title">Want a cuppa?</h3>
+          </div>
+          <div class="section-item">
+            <h2 class="section-subtitle">Afternoon Tea</h2>
+            <div class="afternoon-tea">
+              <p class="intro">
+                Afternoon tea, is a formal tea-based event where a meal where pastries, scones, cakes and sometimes sandwiches are served alongside tea. This event is not to be confused with the more well known "high tea" event which is a more formal occasion suited with more food offerings.
+                
+              </p>
+              <div id="afternoon-tea-table"></div>
+              <p>
+                Afternoon tea was first introduced in the early 1840s when the Duchess of Bedford, Anna Russel decided to order a small meal comprised of tea, bread and butter in order to stave off the hunger before her evening meal. She began to invite her friends over to share her meal and this soon became a routine social event. It quickly caught on amongst the upper classes, and soon afternoon tea became a staple early afternoon event.
+                
+              </p>
+              <p>
+                In more modern times, afternoon tea is not such a formal event as it was in the past. But is sometimes enjoyed at special events like birthdays and baby showers or just as a gathering among friends.
+                
+              </p>
+            </div>
+          </div>
+          <div class="section-item">
+            <h2 class="section-subtitle">High Tea</h2>
+            <div class="high-tea">
+              <p class="intro">
+                High tea is known in modern times as simply "tea". High tea is generally more formal and larger meal in modern times than afternoon tea, but is nonetheless similarly a social event.
+                
+              </p>
+              <div id="high-tea-table"></div>
+              <p>
+                High tea originated in the 1700s within working class households. After a worker would return home after a long day's work, the worker would need a large hearty meal coupled with tea to regain their vigour. It is thought that the name "high tea" originated from the fact that the meal would be the "high" point of the worker's day. It may also reflect the fact that the working class meal was often served on a table and high dining chairs in contrast to the "low" garden parlour chairs where afternoon tea was often served.
+                
+              </p>
+            </div>
+          </div>
+          <div class="section-item">
+            <h2 class="section-subtitle">Etiquette</h2>
+            <p class="section-subtitle-desc">How to tea time social blunders.</p>
+            <ul style="list-style: none">
+              <li>
+                <h1 class="etiquette-title">Preparing the Tea.</h1>
+                <p>
+                  If you find yourself hosting an afternoon or high tea event, you need to ensure that you are brewing the tea correctly. A generally guide to properly brewing tea at one of these events is:
+                  
+                </p>
+                <ul>
+                  <li>Choose a <strong>loose-leaf</strong> tea to brew.</li>
+                  <li>Boil cold water in your kettle.</li>
+                  <li>Pour a small amount of hot water into your teapot and swill it about in order to heat it up.</li>
+                  <li>For every cup (250ml) of water you add to the teapot, you should add the properly proportional amount of tea leaves. Generally, you want to add a teaspoon for every cup.</li>
+                  <li>Once the water has been boiled, pour it into the teapot and let the leaves steep. It is important to watch how long you let the leaves steep for. Leaving the tea leaves in for too long will damage the taste of the tea, so it's advised to allow to steep for around 4-6 minutes.</li>
+                </ul>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Dress Code</h1>
+                <p>
+                  Unless otherwise specified most venues have a "formal casual" dress code. In other words you can wear things like jackets and jeans to one of these events. It is advised that you do not wear sportswear or trainers. If you want however, you can get as formally dressed up as you like.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Always Use a Fork</h1>
+                <p>
+                  Always use a fork while eating. This may seem like a no-brainer but most of the foods at tea will be "finger foods", and thus you must resist the tempation to use your hands to eat entirely.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Look into your Cup</h1>
+                <p>
+                  When you're drinking your tea, do not look over your cup at other people. Look into your cup to avoid coming off as being impolite.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Pouring your Tea</h1>
+                <p>
+                  Only pour your tea if there is no one designated to do so. Generally, if there are no servers or maids to assist you, the group should elect a member to temporarily take up the role for around 15-20 minutes. When pouring it should never be poured to the brim in case the tea spills.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Milk and Lemon</h1>
+                <p>
+                  You should never add milk and lemon juice together in the same cup. The citric acid in the lemon juice will make the milk curdle.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Dunking</h1>
+                <p>
+                  If this isn't an obvious social faux-pas, it should be obvious to you now. Dunking food items into your tea is something you absolutely should never do unless your by yourself... Then no one can know of your shame.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Stirring</h1>
+                <p>
+                  If you have added something to your tea, or have any reason that may require you to stir your beverage, you must ensure that you are stirring correctly. Starting from a 6 o' clock position, lightly most the teaspoon to 
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Teaspoon</h1>
+                <p>
+                  Once you have finished using your teaspoon ensure that you are placing it the right side of your saucer and not in the cup.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Plate</h1>
+                <p>
+                  Do not place your plate more than an inch away from the edge of the table. Nor should you move your plate at any time during tea.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Scones</h1>
+                <p>
+                  When eating a scone it should never be eaten whole. Break the scone into smaller pieces and add whatever topping you like to each individual piece. As a general rule, you should add each topping individually. However, adding toppings individually isn't a practice that is observed everywhere and in some environments it may be fine to add multiple toppings to a single piece of a scone.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">It's a mouthful</h1>
+                <p>
+                  When eating foods like cakes or sandwiches ensure that you only take a small piece of the food item. Don't take off and eat large pieces of food. While eating keep your mouth closed, and if there's food stuck between your teeth it's acceptable to remove it.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Table Manners</h1>
+                <p>
+                  Always place your napkin on your lap at all times during tea time. If you need to leave must place it on your chair and <strong>not</strong> on the table. Only put the napkin on the table when you have finished tea.
+                  
+                </p>
+              </li>
+              <li>
+                <h1 class="etiquette-title">Pinkies Down</h1>
+                <p>
+                  While you may find it hard to live the aristocratic high-life and stick out your pinkie while sipping tea, it is generally rude to do so. Keep your pinky down, and firmly on the teacup.
+                  
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="section-item japanese-customs">
+            <h2 class="section-subtitle">Japanese Tea Ceremony</h2>
+          </div>
+        </div>
+      </section>
+      <section id="section_6"></section>
+      <section id="section_7"></section>
+      <section id="section_8"></section>
+      <section id="section_9"></section>
+      <section id="section_10"></section>
+      <section id="section_11"></section>
+    </div>
+  </body>
+  <footer></footer>
+</html>

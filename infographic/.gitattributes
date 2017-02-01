@@ -1,0 +1,18 @@
+## .gitattributes
+
+*.pdf diff=astextplain
+*.PDF diff=astextplain
+
+# Interpret these file extensions as text.
+
+*.html text
+*.htm text
+*.js text
+*.css text
+
+# Be certain that images aren't interpreted as text by github.
+
+*.jpg binary
+*.png binary
+*.ico binary
+*.gif binary

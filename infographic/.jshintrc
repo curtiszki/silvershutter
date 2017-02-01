@@ -1,0 +1,14 @@
+{
+	
+	// JSHint configuration
+
+	"maxerr": 25,
+	"mocha": false,
+	"nonbsp": false,
+	"quotmark": true,
+
+	"globals": {
+
+		"jquery": true
+	}
+}

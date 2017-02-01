@@ -1,0 +1,31 @@
+{
+  "name": "countries",
+  "children": [
+    {"name": "Asia", "children": [
+      {"name": "China", "size": "1924"},
+      {"name": "India", "size": "1208"},
+      {"name": "Sri Lanka", "size": "340"},
+      {"name": "Vietnam", "size": "214"},
+      {"name": "Turkey", "size": "212"},
+      {"name": "Iran", "size": "160"},
+      {"name": "Indonesia", "size": "148"},
+      {"name": "Japan", "size": "84.8"},
+      {"name": "Thailand", "size": "75"},
+      {"name": "Bangladesh", "size": "64"},
+      {"name": "Myanmar", "size": "31.7"},
+      {"name": "Nepal", "size": "20.59"}
+    ]},
+    { "name": "Americas", "children": [
+      {"name": "Argentina", "size": "105"}
+    ]},
+    { "name": "Africa", "children": [
+      {"name": "Kenya", "size": "432"},
+      {"name": "Malawi", "size": "54"},
+      {"name": "Uganda", "size": "53"},
+      {"name": "Burundi", "size": "41.82"},
+      {"name": "Tanzania", "size": "33.7"},
+      {"name": "Mozambique", "size": "23"},
+      {"name": "Rwanda", "size": "22.19"}
+    ]}
+  ]
+}

@@ -1,0 +1,8 @@
+## .GITIGNORE FILE 
+
+.sass-cache
+node_modules
+
+## ignore the _site directory where the preprocessed files are kept.
+
+_site

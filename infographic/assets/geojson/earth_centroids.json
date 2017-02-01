@@ -1,0 +1,12 @@
+{"type":"FeatureCollection", "features": [
+{"type": "Feature", "id": "01", "geometry": {"type": "Point", "coordinates":["32.103029", "39.473694"]}, "properties": {"name": "Turkey", "consumption": 7.64}},
+{"type": "Feature", "id": "02", "geometry": {"type": "Point", "coordinates":["-8.211528", "31.809686"]}, "properties": {"name": "Morocco", "consumption": 4.34}},
+{"type": "Feature", "id": "03", "geometry": {"type": "Point", "coordinates":["-8.162855", "53.316211"]}, "properties": {"name": "Ireland", "consumption": 3.22}},
+{"type": "Feature", "id": "04", "geometry": {"type": "Point", "coordinates":["-10.275632", "19.363243"]}, "properties": {"name": "Mauritania", "consumption": 3.22}},
+{"type": "Feature", "id": "05", "geometry": {"type": "Point", "coordinates":["-1.443726", "52.288829"]}, "properties": {"name": "United Kingdom", "consumption": 2.74}},
+{"type": "Feature", "id": "06", "geometry": {"type": "Point", "coordinates":["55.443818", "-4.618440"]}, "properties": {"name": "Seychelles", "consumption": 2.08}},
+{"type": "Feature", "id": "07", "geometry": {"type": "Point", "coordinates":["54.033926", "23.691019"]}, "properties": {"name": "United Arab Emirates", "consumption": 1.89}},
+{"type": "Feature", "id": "08", "geometry": {"type": "Point", "coordinates":["47.341282", "29.317425"]}, "properties": {"name": "Kuwait", "consumption": 1.61}},
+{"type": "Feature", "id": "09", "geometry": {"type": "Point", "coordinates":["51.112088", "25.314321"]}, "properties": {"name": "Qatar", "consumption": 1.60}},
+{"type": "Feature", "id": "10", "geometry": {"type": "Point", "coordinates":["67.167775", "48.440300"]}, "properties": {"name": "Kazakhstan", "consumption": 1.54}}
+]}
