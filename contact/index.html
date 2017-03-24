@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <!-- :head-->
+  <head>
+    <title>Contact | Mock Photography Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal mock photography contact form">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <!-- MSIE related-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="cleartype" content="on">
+    <!-- IOS -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="/vendor/css/reset.min.css">
+    <link rel="stylesheet" href="/vendor/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Fanwood+Text|Quattrocento" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.min.css">
+  </head>
+  <link rel="stylesheet" type="text/css" href="../vendor/css/leaflet.css">
+  <script src="../vendor/scripts/leaflet.js"></script>
+  <!-- head:-->
+  <body id="body">
+    <!-- :header-->
+    <header id="header">
+      <div class="header-wrapper">
+        <nav class="header-nav">
+          <ul class="clearfix-hidden" style="list-style: none;">
+            <li class="nav-item"><a href="/gallery">gallery</a></li>
+            <li class="nav-item"><a href="/pricing">pricing</a></li>
+            <li class="nav-item"><a href=".">home</a></li>
+            <li class="nav-item"><a href="/about">about</a></li>
+            <li class="nav-item"><a href="/contact">contact</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-nav" id="ham-open"><i class="fa fa-bars"></i></div>
+        <div class="nav-overlay" id="display-overlay">
+          <p class="fa fa-close" id="overlay-close"></p>
+          <ul class="nav-inner"><a href="/gallery">
+              <li>Gallery</li></a><a href="/pricing">
+              <li>Pricing</li></a><a href="/">
+              <li>Home</li></a><a href="/about">
+              <li>About</li></a><a href="/contact">
+              <li>Contact</li></a></ul>
+        </div>
+      </div>
+    </header>
+    <!-- header:-->
+    <main>
+      <section id="contact">
+        <div class="inner-contents">
+          <div class="opening">
+            <h1 class="page-title">Contact    </h1>
+            <p class="opening-text">If you would like to get in touch, you can reach me at: <span style="unicode-bidi: bidi-override; direction: rtl"><a href="javascript:void(0)" style="unicode-bidi: bidi-override; direction: rtl">.liame.laer&#64;ton</a></span></p>
+          </div>
+          <div class="contact-wrap">
+            <div class="location-text">
+              <h3 class="location-title">Where you can find us</h3>
+              <p>
+                We are located on 19282 Imaginary Location, Imaginary City, Iowa. 
+                The location is our home, and it is the dutch colonial that you find about on the third turn as you enter Imaginary Street. 
+                It's a fenced area, and the front door should be two large French Doors.
+              </p>
+            </div>
+            <div id="location-map"></div>
+            <div class="contact-form">
+              <h1 class="contact-title">Reach Me.</h1>
+              <form class="form-proper">
+                <div class="form-item">
+                  <label for="name">Name&nbsp;&#42;&nbsp;REQUIRED</label>
+                  <input type="text" id="name" placeholder="Write your name here" maxlength="25">
+                </div>
+                <div class="form-item">
+                  <label for="email">Email Address:&nbsp;&#42;&nbsp;REQUIRED</label>
+                  <input type="text" id="email" placeholder="Write your email here" maxlength="40">
+                </div>
+                <div class="form-item">
+                  <label for="type">Reason for requesting photographer (graduation/wedding/baby photos):</label>
+                  <input type="text" placeholder="Why would you like to reach us?" id="type" maxlength="200">
+                </div>
+                <div class="form-item">
+                  <label for="date">What day or time range would you like to book?</label>
+                  <input type="text" id="date" placeholder="E.g. What time would you like to request?">
+                </div>
+                <div class="form-item">
+                  <label for="additional">Anything else you would like to let us know?</label>
+                  <textarea id="additional" placeholder="Write any additional information here" style="width: 100%;" rows="5"></textarea>
+                </div>
+                <button id="form-submit" type="submit" action="#">Submit </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- :footer-->
+    <footer id="footer">
+      <div class="footer-inner">
+        <ul class="footer-social"><a href="https://facebook.com">
+            <li class="fa fa-facebook-square"></li></a><a href="https://twitter.com">
+            <li class="fa fa-twitter-square"></li></a><a href="https://plus.google.com">
+            <li class="fa fa-google-plus-square"></li></a><a href="https://instagram.com">
+            <li class="fa fa-instagram"></li></a></ul>
+        <div class="footer-information">
+          <ul class="information-list">
+            <li class="phone-number">(000) 000-0000</li>
+            <li class="address">Made-up location.</li>
+            <li class="hours">7AM-5PM Everyday.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&#169;2017. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- footer:-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="/scripts/main.min.js"></script>
+    <script>
+      var map = L.map('location-map').setView([42.033, -93.614], 14);
+        
+      L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+      }).addTo(map);
+      
+      var marker = L.marker([42.035, -93.620]).addTo(map);
+    </script>
+  </body>
+</html>
